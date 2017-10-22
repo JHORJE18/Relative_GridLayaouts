@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relative"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    android:background="@android:color/darker_gray"
+    tools:context="com.example.jhorje.relative_gridlayaouts.MainActivity">
+
+
+    <TextView
+        android:id="@+id/album1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="10dp"
+        android:background="@android:color/holo_red_dark"
+        android:clickable="true"
+        android:onClick="onClick"
+        android:padding="10dp"
+        android:text="Album 1"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_light"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/album2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/album1"
+        android:layout_margin="10dp"
+        android:background="@android:color/holo_orange_light"
+        android:clickable="true"
+        android:onClick="onClick"
+        android:padding="10dp"
+        android:text="Album 2"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_light" />
+
+    <TextView
+        android:id="@+id/album3"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/album2"
+        android:layout_margin="10dp"
+        android:background="@android:color/holo_green_light"
+        android:clickable="true"
+        android:onClick="onClick"
+        android:padding="10dp"
+        android:text="Album 3"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_light" />
+
+    <TextView
+        android:id="@+id/album4"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/album3"
+        android:layout_margin="10dp"
+        android:background="@android:color/holo_blue_bright"
+        android:clickable="true"
+        android:onClick="onClick"
+        android:padding="10dp"
+        android:text="Album 4"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_light" />
+
+    <TextView
+        android:id="@+id/separador"
+        android:layout_width="10dp"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@id/album1"
+        android:background="@android:color/background_light" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@id/separador"
+        android:background="@android:color/holo_red_dark">
+
+        <GridLayout
+            android:id="@+id/gridFotos"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alignmentMode="alignMargins"
+            android:background="@android:color/holo_red_dark"
+            android:columnCount="2"
+            android:rowCount="10"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/formatoFoto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:height="50dp"
+                android:background="@color/Yellow"
+                android:text="Selecciona un album"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+
+        </GridLayout>
+    </ScrollView>
+
+    //Grid para copiar formato elementos
+    <GridLayout
+        android:id="@+id/gridFotosIn"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:background="@android:color/holo_red_dark"
+        android:columnCount="2"
+        android:rowCount="10"
+        android:visibility="gone"></GridLayout>
+
+</RelativeLayout>
